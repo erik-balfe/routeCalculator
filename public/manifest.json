@@ -1,11 +1,11 @@
 {
-  "name": "appName",
-  "short_name": "appName",
+  "name": "routeCalculator",
+  "short_name": "routeCalculator",
   "description": "",
   "start_url": "./",
   "icons": [
     {
-      "src": "images/favicon-196x196.png",
+      "src": "images/favicon-196x196.ico",
       "sizes": "196x196",
       "type": "image/png"
     }

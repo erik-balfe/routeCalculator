@@ -1,6 +1,9 @@
 {
-  "name": "appName",
+  "name": "routeCalculator",
   "packageManager": "yarn@3.6.3",
+  "repository": {
+    "url": "git+https://github.com/erik-balfe/routeCalculator.git"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -73,6 +76,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^3.2.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.0",
     "http-proxy-middleware": "^2.0.6",
     "mini-css-extract-plugin": "^2.6.1",
@@ -96,6 +100,7 @@
     "start": "NODE_ENV=\"development\" webpack serve --config webpack.config.ts --stats-children ",
     "build": "NODE_ENV=\"production\" webpack --config webpack.config.ts",
     "lint": "NODE_ENV=\"development\" eslint . --fix --ext .ts,.tsx",
-    "build:debug": "NODE_ENV=\"production\" DEBUG=true webpack --config webpack.prod.config.ts"
+    "build:debug": "NODE_ENV=\"production\" DEBUG=true webpack --config webpack.prod.config.ts",
+    "deploy": "gh-pages -d build"
   }
 }
