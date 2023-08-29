@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { QueryFunctionContext } from '@tanstack/react-query';
 // interfaces here
 
 // Cities of France. Name, Latitude, Longitude.
@@ -33,10 +34,6 @@ const citiesMap = citiesCoordinates.reduce<Map<string, [number, number]>>((map, 
   map.set(name, coords);
   return map;
 }, new Map<string, [number, number]>());
-
-function searchCities(): Promise<string[]> {
-  return axios.get('/myEndpoint').then((response: any) => response.data);
-}
 
 const sleep = (ms: number) => new Promise((resolve) => {
   setTimeout(resolve, ms);
@@ -85,19 +82,38 @@ function calculateDistances(cities: string[]): {
   return distances;
 }
 
-async function mockSearchCities(query: string): Promise<string[]> {
-  await sleep(1000);
-  return allCities.filter((item) => item.toLowerCase().startsWith(query));
+async function mockSearchCities(
+  searchString: string,
+) {
+  return allCities.filter((item) => item.toLowerCase().startsWith(searchString));
 }
 
-async function mockGetDistance(cities: string[]) {
-  await sleep(1000);
+async function searchCities(context: QueryFunctionContext<string[]>) {
+  const [queryKey, searchString] = context.queryKey;
+  await sleep(800);
+  if (searchString.length === 0) return [];
+  if (searchString.toLowerCase().includes('fail')) {
+    throw new Error('mock error in cities search');
+  }
+  return mockSearchCities(searchString);
+}
+
+// async function searchCities(searchString: string) {
+//   if (searchString.toLowerCase().includes('fail')) {
+//     throw new Error('mock error in cities search');
+//   }
+//   return mockSearchCities(searchString);
+// }
+
+async function fetchDistance(cities: string[]) {
+  await sleep(2000);
+  if (cities.some((item) => item.toLowerCase().includes('dijon'))) {
+    throw new Error('mock error in cities search');
+  }
   return calculateDistances(cities);
 }
 
-/* eslint-disable */
 export {
-  mockSearchCities as searchCities,
-  mockGetDistance as fetchDistance
+  searchCities,
+  fetchDistance,
 };
-/* eslint-enable */

@@ -12,17 +12,10 @@ const queryClient = new QueryClient();
 
 function App() {
   useEffect(() => {
-    const search = async () => {
-      const cities = await searchCities('n');
-    };
-    search();
-  }, []);
-
-  useEffect(() => {
     const getDistance = async () => {
-      const distance = await fetchDistance(['Nice', 'Nantes']);
+      const distance = await fetchDistance(['Nice', 'Nantes', 'dfijon']);
     };
-    getDistance();
+    // getDistance();
   }, []);
 
   return (
