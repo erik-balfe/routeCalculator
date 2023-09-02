@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './Main.module.scss';
-import CitySelect from '../../Componets/CitySelect';
+import SearchForm from '../../Componets/SearchForm';
 
 function MainPage() {
   return (
     <div className={s.root}>
       {/* Header here */}
       <div className={s.content}>
-        <CitySelect />
+        <SearchForm />
       </div>
     </div>
   );

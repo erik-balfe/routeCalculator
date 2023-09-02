@@ -90,7 +90,7 @@ async function mockSearchCities(
 
 async function searchCities(context: QueryFunctionContext<string[]>) {
   const [queryKey, searchString] = context.queryKey;
-  await sleep(800);
+  await sleep(300);
   if (searchString.length === 0) return [];
   if (searchString.toLowerCase().includes('fail')) {
     throw new Error('mock error in cities search');
@@ -106,7 +106,7 @@ async function searchCities(context: QueryFunctionContext<string[]>) {
 // }
 
 async function fetchDistance(cities: string[]) {
-  await sleep(2000);
+  await sleep(500);
   if (cities.some((item) => item.toLowerCase().includes('dijon'))) {
     throw new Error('mock error in cities search');
   }

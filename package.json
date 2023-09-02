@@ -17,13 +17,17 @@
     "@mui/base": "^5.0.0-beta.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.13.6",
+    "@mui/system": "^5.14.7",
+    "@mui/x-date-pickers": "^6.12.1",
     "@reduxjs/toolkit": "^1.6.2",
     "@tanstack/react-query": "^4.29.19",
     "@types/react-redux": "^7.1.24",
     "@types/react-select": "^5.0.1",
+    "@types/uuid": "^9.0.3",
     "axios": "^0.24.0",
     "camel-keys": "^1.0.1",
     "classnames": "^2.3.1",
+    "dayjs": "^1.11.9",
     "lodash": "^4.17.21",
     "lodash.throttle": "^4.1.1",
     "node-sass": "^8.0.0",
@@ -39,7 +43,8 @@
     "redux-observable": "^2.0.0",
     "redux-thunk": "^2.4.2",
     "rooks": "^7.4.0",
-    "use-local-storage": "^3.0.0"
+    "use-local-storage": "^3.0.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
