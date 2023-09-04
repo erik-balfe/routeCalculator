@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { QueryFunctionContext } from '@tanstack/react-query';
-// interfaces here
 
 // Cities of France. Name, Latitude, Longitude.
 const citiesCoordinates: [string, number, number][] = [
@@ -97,13 +96,6 @@ async function searchCities(context: QueryFunctionContext<string[]>) {
   }
   return mockSearchCities(searchString);
 }
-
-// async function searchCities(searchString: string) {
-//   if (searchString.toLowerCase().includes('fail')) {
-//     throw new Error('mock error in cities search');
-//   }
-//   return mockSearchCities(searchString);
-// }
 
 async function fetchDistance(cities: string[]) {
   await sleep(500);

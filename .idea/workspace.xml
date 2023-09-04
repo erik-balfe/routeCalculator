@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="594ba008-94ec-4048-90cd-cf94b8206a44" name="Changes" comment="add citySelect component with working dropdown. Without styling">
-      <change afterPath="$PROJECT_DIR$/src/Componets/NumberSelect/NumberSelect.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Componets/NumberSelect/NumberSelect.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Componets/NumberSelect/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Componets/SearchForm/SearchForm.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Componets/SearchForm/SearchForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Componets/SearchForm/index.ts" afterDir="false" />
+    <list default="true" id="594ba008-94ec-4048-90cd-cf94b8206a44" name="Changes" comment="add datePicker, select, passengers count select">
+      <change afterPath="$PROJECT_DIR$/src/Componets/CitySelectGroup/CitySelectGroup.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Componets/CitySelectGroup/CitySelectGroup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Componets/CitySelectGroup/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Componets/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Componets/CitySelect/CitySelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Componets/CitySelect/CitySelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Main/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Main/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Componets/SearchForm/SearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Componets/SearchForm/SearchForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +66,9 @@
       <recent name="$PROJECT_DIR$/src/Componets" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Componets" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -86,7 +84,7 @@
       <workItem from="1693205688055" duration="11487000" />
       <workItem from="1693227707937" duration="47000" />
       <workItem from="1693227760911" duration="2160000" />
-      <workItem from="1693235408674" duration="55298000" />
+      <workItem from="1693235408674" duration="85690000" />
     </task>
     <task id="LOCAL-00001" summary="fix pnp">
       <option name="closed" value="true" />
@@ -136,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693312279299</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add datePicker, select, passengers count select">
+      <option name="closed" value="true" />
+      <created>1693654911261</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693654911261</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +167,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="add both API endpoints mock" />
     <MESSAGE value="add citySelect component with working dropdown. Without styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="add citySelect component with working dropdown. Without styling" />
+    <MESSAGE value="add datePicker, select, passengers count select" />
+    <option name="LAST_COMMIT_MESSAGE" value="add datePicker, select, passengers count select" />
   </component>
 </project>
