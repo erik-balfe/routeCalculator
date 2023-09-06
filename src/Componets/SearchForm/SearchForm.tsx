@@ -28,7 +28,7 @@ function SearchForm() {
           <CitySelectGroup control={control} />
           <div className={s.rigth}>
             <div>Passengers</div>
-            <NumberSelect defaultValue={2} control={control} />
+            <NumberSelect control={control} />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker />
             </LocalizationProvider>

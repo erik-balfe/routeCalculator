@@ -6,10 +6,11 @@ import {
   Unstable_NumberInput as MuiNumberInput,
 } from '@mui/base/Unstable_NumberInput';
 import { styled } from '@mui/system';
+import { useSearchParams } from 'react-router-dom';
 import s from '../NumberSelect.scss';
 
 export interface Props {
-  defaultValue: number;
+  defaultValue?: number;
   control: Control
 }
 
@@ -118,7 +119,39 @@ const StyledButton = styled('button')(
 `,
 );
 
-function NumberSelect({ control, defaultValue }: Props) {
+const SEARCH_PARAM_KEY = 'passengersCount';
+
+function NumberSelect({ control, defaultValue = 1 }: Props) {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const updateInSearchParam = (value: number) => {
+    searchParams.set(SEARCH_PARAM_KEY, String(value));
+    setSearchParams(searchParams);
+  };
+
+  const removeSearchParam = () => {
+    setSearchParams((prevSearchParams) => {
+      prevSearchParams.delete(SEARCH_PARAM_KEY);
+      return prevSearchParams;
+    });
+    const paramsString = searchParams.toString();
+    const newUrl = paramsString ? `?${paramsString}` : window.location.pathname;
+    window.history.replaceState({}, '', newUrl);
+  };
+
+  let selectedValue = 1;
+
+  try {
+    const passengersCountFromSearchParams = searchParams.get(SEARCH_PARAM_KEY);
+    if (passengersCountFromSearchParams) {
+      selectedValue = JSON.parse(passengersCountFromSearchParams);
+    }
+  } catch (error) {
+    console.error(`Error parsing "${SEARCH_PARAM_KEY}" from searchParams`, error);
+    removeSearchParam();
+    selectedValue = 1;
+  }
+
   return (
     <div>
       <Controller
@@ -142,9 +175,13 @@ function NumberSelect({ control, defaultValue }: Props) {
                 children: <RemoveIcon />,
               },
             }}
-            min={0}
-            value={field.value}
-            onChange={field.onChange}
+            min={1}
+            value={selectedValue}
+            onChange={(event, newValue) => {
+              if (!newValue) return;
+              field.onChange(newValue);
+              updateInSearchParam(newValue);
+            }}
           />
         )}
       />

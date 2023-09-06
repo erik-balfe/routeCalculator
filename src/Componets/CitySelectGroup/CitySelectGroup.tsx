@@ -57,23 +57,20 @@ function CitySelectGroup({ control }: Props) {
 
   return (
     <div className={s.root}>
-      {selectedCities.map((field, index) => {
-        console.log('updated', field.name, field.value);
-        return (
-          <CitySelect
-            key={field.name}
-            control={control}
-            name={field.name}
-            value={selectedCities[index].value}
-            label={index === 0 ? 'City of origin' : 'City of destination'}
-            removable={index > 1}
-            onChange={(selectedOption) => {
-              updateField(field.name, selectedOption);
-            }}
-            onRemoveField={removeField}
-          />
-        );
-      })}
+      {selectedCities.map((field, index) => (
+        <CitySelect
+          key={field.name}
+          control={control}
+          name={field.name}
+          value={selectedCities[index].value}
+          label={index === 0 ? 'City of origin' : 'City of destination'}
+          removable={index > 1}
+          onChange={(selectedOption) => {
+            updateField(field.name, selectedOption);
+          }}
+          onRemoveField={removeField}
+        />
+      ))}
       <button type="button" onClick={addField}>Add destination</button>
     </div>
   );
