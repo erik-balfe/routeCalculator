@@ -1,14 +1,10 @@
-import React, {
-  FormEvent,
-} from 'react';
+import React, { FormEvent } from 'react';
 import { useForm } from 'react-hook-form';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import s from './SearchForm.scss';
 import CitySelectGroup from '../CitySelectGroup';
 import NumberSelect from '../NumberSelect';
 import { FormData } from '../types';
+import DateSelect from '../DateSelect';
 
 function SearchForm() {
   const { handleSubmit, control } = useForm<FormData>();
@@ -29,10 +25,7 @@ function SearchForm() {
           <div className={s.rigth}>
             <div>Passengers</div>
             <NumberSelect control={control} />
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DatePicker />
-            </LocalizationProvider>
-            <div>Date</div>
+            <DateSelect control={control} />
             <button type="submit" onClick={onSubmit}>Submit</button>
           </div>
         </div>
