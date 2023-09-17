@@ -4,6 +4,7 @@
   "repository": {
     "url": "git+https://github.com/erik-balfe/routeCalculator.git"
   },
+  "homepage": "https://erik-balfe.github.io/routeCalculator/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
