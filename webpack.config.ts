@@ -88,7 +88,7 @@ export default (env: Record<string, string>) => {
                 return (pathData.chunk.name === 'service-worker') ? '[name].js' : '[name].[contenthash].js';
             },
             assetModuleFilename: 'images/[name][ext]',
-            publicPath: "/",
+            publicPath: "",
         },
         module: {
             rules: [
