@@ -1,6 +1,6 @@
 {
-  "name": "appName",
-  "short_name": "appName",
+  "name": "routeCalculator",
+  "short_name": "routeCalculator",
   "description": "",
   "start_url": "./",
   "icons": [
