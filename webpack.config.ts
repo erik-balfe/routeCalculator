@@ -141,7 +141,7 @@ export default (env: Record<string, string>) => {
             new NodePolyfillPlugin(),
             new HtmlWebpackPlugin({
                 template: "src/index.html",
-                favicon: "public/images/favicon-196x196.ico",
+                favicon: "public/images/favicon.ico",
                 manifest: "public/manifest.json",
                 environment: process.env.NODE_ENV
             }),
